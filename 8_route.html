@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test AngularJS Application</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="js/8_app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="ngApp">
+    <div class="container">
+        <div class="page-header">
+            <h1>
+            ui.router,$stateParams <br>
+            <small>การใช้งาน ui.router,$stateParams</small>
+            </h1>
+        </div>
+        <ul class="nav nav-pills" ng-controller="Menu">
+            <li role="presentation"><a href="#/home">Home</a></li>
+            <li role="presentation"><a href="#/page2/test params 2">Page2</a></li>
+            <li role="presentation"><a href="#/page3/test params 3">Page3</a></li>
+            <li role="presentation"><a href="#/page4/test params 4">Page4</a></li>
+        </ul>
+        <!--start show -->
+        <ui-view>
+        </ui-view>
+        <!--end show -->
+    </div>
+</body>
+
+</html>
