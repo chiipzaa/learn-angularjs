@@ -1,11 +1,8 @@
 'use strict';
 
 angular.module('ngApp', [])
-
 .controller('homeCtrl', function($scope, $http) {
-
     $scope.IsVisible = false;
-
     $scope.ShowHide = function() {
         $scope.IsVisible = $scope.IsVisible ? false : true;
     }
@@ -24,3 +21,4 @@ angular.module('ngApp', [])
         });
 
 });
+

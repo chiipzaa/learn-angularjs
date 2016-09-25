@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Test AngularJS Application</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/5_app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="ngApp">
+    <div class="container" ng-controller="homeCtrl">
+        <div class="page-header">
+            <h1>
+            $http.get<br>
+            <small>การใช้งาน $http.get</small>
+            </h1>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="ShowHide()">
+            <span ng-hide="IsVisible">Show</span>
+            <span ng-show="IsVisible">Hide</span>
+        </button>
+        <hr>
+
+        <div ng-show="IsVisible">
+            <input type="text" class="form-control" id="fname" ng-model="search" placeholder="Search..">
+            <hr>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>E-Mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="m in members | filter : search">
+                        <td>
+                        <img ng-src="{{m.imgUrl}}" width="120px" ng-if="m.imgUrl.length>0">
+                        <img ng-src="img/no_image.gif" width="120px" ng-if="m.imgUrl.length<1">
+                        </td>
+                        <td>{{m.fname}}</td>
+                        <td>{{m.lname}}</td>
+                        <td>{{m.email}}</td>
+                    </tr>
+            </table>
+            </tbody>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>
